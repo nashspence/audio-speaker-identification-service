@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: titanet-speaker-id-api
+    env_file:
+      - .env
+    environment:
+      HF_HOME: ${HF_HOME}
+      HUGGINGFACE_HUB_CACHE: ${HF_HOME}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    ports:
+      - "${SERVICE_PORT:-8000}:8000"
+    volumes:
+      - speaker-data:/data
+      - hf-cache:${HF_HOME}
+    gpus: all
+    shm_size: 1gb
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8000/healthz >/dev/null || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 180s
+
+volumes:
+  speaker-data:
+  hf-cache:

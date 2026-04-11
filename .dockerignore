@@ -1,0 +1,10 @@
+.git
+.gitignore
+.devcontainer
+.env
+__pycache__
+.pytest_cache
+.ruff_cache
+data
+speaker-data
+.venv
