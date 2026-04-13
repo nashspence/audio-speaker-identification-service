@@ -22,7 +22,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="TitaNet Speaker ID Service",
+    title="Audio Speaker Identification Service",
     version="0.1.0",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,

@@ -1,4 +1,4 @@
-# TitaNet Speaker ID Service
+# Audio Speaker Identification Service
 
 Minimal GPU-backed HTTP service for `nvidia/speakerverification_en_titanet_large` with:
 
