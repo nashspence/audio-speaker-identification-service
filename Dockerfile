@@ -29,7 +29,7 @@ RUN python -m pip install --no-cache-dir --upgrade pip \
 
 COPY app /app/app
 
-RUN mkdir -p /data /cache/huggingface
+RUN mkdir -p /data /models/cache/huggingface
 
 EXPOSE 8000
 

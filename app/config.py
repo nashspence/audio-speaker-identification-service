@@ -7,8 +7,8 @@ class Settings(BaseSettings):
     service_port: int = 8000
     model_id: str = "nvidia/speakerverification_en_titanet_large"
     model_device: str = "cuda"
-    model_cache_dir: str = "/cache/huggingface"
-    hf_home: str = "/cache/huggingface"
+    model_cache_dir: str = "/models/cache/huggingface"
+    hf_home: str = "/models/cache/huggingface"
     hf_hub_disable_telemetry: int = 1
     hf_token: str = ""
     identification_threshold: float = 0.60
